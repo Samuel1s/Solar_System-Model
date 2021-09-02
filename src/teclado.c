@@ -44,7 +44,11 @@ void teclado(unsigned char key, int x, int y)
         break;
 
     case 49: //numero 1 - visao de cima
-        observador_virtual_eixo_Z = 2000;
+        observador_virtual_eixo_Z = 1000;
+        break;
+
+    case 50: //numero 1 - visao de baixo
+        observador_virtual_eixo_Z = -1000;
         break;
 
     case 'c': //centraliza no Sol

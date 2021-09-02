@@ -2,52 +2,12 @@
 #include "./library/header.h"
 
 // Util para nao precisar gerar os .o
-#include "criaSistema.c"
 #include "teclado.c"
+#include "inicializa.c"
+#include "criaSistema.c"
 #include "movimentacao.c"
 #include "desenhaSistema.c"
 #include "carregaTexturas.c"
-
-#define MUS_PATH "alpha-audio.mp3"
-
-// Our music file
-Mix_Music *music = NULL;
-
-void Inicializa(void)
-{
-  if (SDL_Init(SDL_INIT_AUDIO) < 0)
-    return -1;
-
-  //Initialize SDL_mixer
-  if (Mix_OpenAudio(22050, MIX_DEFAULT_FORMAT, 2, 4096) == -1)
-    return -1;
-
-  // Load our music
-  music = Mix_LoadMUS(MUS_PATH);
-  if (music == NULL)
-    return -1;
-
-  if (Mix_PlayMusic(music, -1) == -1)
-    return -1;
-
-  // Inicializa variáveis.
-  angulo_projecao_persp = 10;
-  rotacao_eixo_X = 0;
-  rotacao_eixo_Y = 0;
-  rotacao_eixo_Z = 0;
-  observador_virtual_eixo_X = observador_virtual_eixo_Y = 0;
-  observador_virtual_eixo_Z = 150;
-
-  carregaTextura(); //Inicializa as texturas
-
-  // Não mostrar faces do lado de dentro
-  glEnable(GL_CULL_FACE);
-  glCullFace(GL_BACK);
-
-  glEnable(GL_LIGHTING);
-  glEnable(GL_LIGHT0);
-  glEnable(GL_DEPTH_TEST);
-}
 
 // FONTE: http://www.inf.pucrs.br/~manssour/OpenGL/TeaPot3D.c 
 
@@ -103,6 +63,7 @@ void imprimeGuia()
   printf("  L: Para remover o Sol e toda a luz do sistema. \n");
   printf("  C: Para centralizar a visão do observador no sol. \n");
   printf("  1: Para alternar para a visao superior do sistema. \n");
+  printf("  2: Para alternar para a visao inferior do sistema. \n");
   printf("  MOUSE: Pressiona o botão para aproximar/afastar. \n");
   printf("  ESC: Sair.\n");
   printf("  ------------------------------------------------------------------\n");

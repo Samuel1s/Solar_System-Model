@@ -16,6 +16,7 @@
 // Includes das Bibliotecas criadas.
 #include "teclado.h"
 #include "variaveis.h"
+#include "inicializa.h"
 #include "criaSistema.h"
 #include "movimentacao.h"
 #include "desenhaSistema.h"

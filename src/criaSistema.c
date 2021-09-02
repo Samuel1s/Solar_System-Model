@@ -84,6 +84,7 @@ void Sistema_Solar_com_orbitas()
   // Limpa a janela de visualizao com a cor de fundo especificada
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   Sistema_Solar();
+  glColor3f(0.0, 1.0, 1.0);
   mostraOrbitas();
   glutSwapBuffers();
 }

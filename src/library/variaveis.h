@@ -14,10 +14,7 @@
 #define P_ROTACAO	5.0
 #define P_OBSERVACAO	10.0
 #define P_TRANSLACAO	10.0
-
-int width = 10;
-int height = 10;
-int length = 10;
+#define MUS_PATH "./music/alpha-audio.mp3"
 
 // Carrega Texturas.
 GLuint lista_texturas[20];
