@@ -44,7 +44,3 @@ Acesse a pasta "src"
 Verifique se existe um arqquivo "MakeFile" na raiz.
 
 Digite o seguinte comando: "make run"
-
-## Desenvolvido por:
-Aluno: Samuel Filipe dos Santos.
-Aluno: Natan Rodrigues Rocha.
